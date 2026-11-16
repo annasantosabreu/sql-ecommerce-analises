@@ -1,38 +1,107 @@
-# sql-ecommerce-analises
+# SQL E-commerce Analytics
 
-Projeto de portfólio com análises em SQL sobre um banco PostgreSQL de e-commerce. O objetivo é praticar modelagem relacional, geração e carga reproduzível de dados, verificações de qualidade e, nas próximas etapas, análise exploratória e otimização de consultas.
+<p align="center">
+  <strong>Um projeto de análise de dados com PostgreSQL, SQL e Python.</strong><br>
+  Modelagem relacional, geração de dados sintéticos, validação de qualidade e um dashboard executivo.
+</p>
 
-> **Dados fictícios.** Todos os registros transacionais são sintéticos e gerados por um script próprio com semente fixa. Não representam uma empresa, marca, pessoa, cliente, vendedor ou operação real. Os nomes de cidades e estados são usados apenas como referências geográficas. Os resultados demonstram técnicas de dados e não permitem tirar conclusões sobre negócios reais.
+<p align="center">
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-16-4169E1?logo=postgresql&logoColor=white">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white">
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+</p>
 
-## Objetivo e competências
+<p align="center">
+  <a href="#visão-geral">Visão geral</a> ·
+  <a href="#dashboard">Dashboard</a> ·
+  <a href="#tecnologias">Tecnologias</a> ·
+  <a href="#como-executar">Como executar</a> ·
+  <a href="#estrutura-do-projeto">Estrutura</a>
+</p>
 
-O projeto foi planejado para demonstrar:
+---
+
+## Visão geral
+
+Este projeto explora um cenário fictício de e-commerce para praticar consultas SQL e conceitos fundamentais de engenharia e análise de dados. O fluxo inclui geração reproduzível de dados com Python, armazenamento em PostgreSQL, verificações de qualidade e disponibilização de indicadores em um painel executivo.
+
+**Os dados são inteiramente sintéticos.** Não representam uma empresa, operação, cliente ou vendedor real. Os resultados servem para demonstrar técnicas e decisões de implementação, não para descrever um negócio real.
+
+### O que o projeto demonstra
 
 - Modelagem relacional com chaves primárias, estrangeiras e restrições de integridade.
 - Geração determinística de dados sintéticos com Python.
-- Carga de arquivos CSV no PostgreSQL.
-- Verificações de integridade, consistência financeira e coerência temporal.
-- Consultas analíticas com CTEs, agregações e window functions.
-- Análise de coorte, retenção e segmentação RFM.
-- Criação de índices e leitura de planos com `EXPLAIN (ANALYZE, BUFFERS)`.
+- Carga de arquivos CSV em PostgreSQL.
+- Consultas analíticas com CTEs, agregações, funções de janela e relacionamentos.
+- Verificações de qualidade e consistência financeira.
+- Exportação de resultados SQL para JSON.
+- Construção de um dashboard executivo.
 
-**Status do desenvolvimento:** o modelo, o gerador, os scripts de banco/carga/qualidade e a primeira versão do dashboard executivo estão incluídos. O painel possui oito consultas SQL e um exportador PostgreSQL → JSON. A execução das consultas no banco, a automação agendada, as análises complementares e a comparação de índices ainda precisam ser validadas nas próximas etapas. Este README não apresenta métricas de negócio que ainda não tenham sido obtidas por uma execução real.
+## Dashboard
 
-## Stack
+A aplicação web está em `dashboard/` e apresenta:
 
-- PostgreSQL 16
-- Docker Compose
-- Python 3.12
-- Faker e NumPy
-- SQL (`psql` e `\copy`)
+- Indicadores de faturamento, pedidos, ticket médio e prazo médio.
+- Evolução mensal do faturamento.
+- Distribuição de pedidos por status.
+- Faturamento por categoria e estado.
+- Ranking de vendedores.
+- Indicadores de entrega e meios de pagamento.
+- Filtro de período para os KPIs e séries mensais.
 
-## Como executar a versão atual
+Para visualizar o painel, primeiro gere o arquivo `data/dashboard.json` seguindo as instruções de execução abaixo.
+
+## Tecnologias
+
+| Tecnologia | Utilização |
+|---|---|
+| PostgreSQL 16 | Banco de dados relacional |
+| SQL | Modelagem, validação e análises |
+| Python 3.12 | Geração de dados e exportação |
+| Faker e NumPy | Dados sintéticos |
+| Psycopg | Conexão Python–PostgreSQL |
+| Docker Compose | Ambiente local do banco |
+| HTML, CSS e JavaScript | Dashboard e visualizações |
+| GitHub Actions | Verificações automatizadas de CI |
+
+## Modelo de dados
+
+O banco possui oito tabelas:
+
+| Tabela | Descrição |
+|---|---|
+| `clientes` | Cadastro sintético de clientes |
+| `vendedores` | Cadastro sintético de vendedores |
+| `categorias` | Categorias do catálogo |
+| `produtos` | Produtos associados às categorias |
+| `pedidos` | Pedidos realizados pelos clientes |
+| `itens_pedido` | Produtos e vendedores associados a cada pedido |
+| `pagamentos` | Registros de pagamento dos pedidos |
+| `avaliacoes` | Avaliações associadas aos pedidos |
+
+```mermaid
+erDiagram
+    CLIENTES ||--o{ PEDIDOS : realiza
+    PEDIDOS ||--|{ ITENS_PEDIDO : contem
+    PEDIDOS ||--o{ PAGAMENTOS : recebe
+    PEDIDOS ||--o| AVALIACOES : recebe
+    CATEGORIAS ||--o{ PRODUTOS : classifica
+    PRODUTOS ||--o{ ITENS_PEDIDO : compoe
+    VENDEDORES ||--o{ ITENS_PEDIDO : vende
+```
+
+Mais detalhes: [documentação do modelo de dados](docs/modelo-de-dados.md).
+
+## Como executar
 
 ### Pré-requisitos
 
-Instale Python 3.12, Docker Desktop com Docker Compose e Git. O Docker Desktop precisa estar iniciado antes de subir o banco.
+- Git
+- Python 3.12
+- Docker Desktop com Docker Compose
 
-### 1. Obter o projeto e preparar o ambiente Python
+### 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/annasantosabreu/sql-ecommerce-analises.git
@@ -40,31 +109,35 @@ cd sql-ecommerce-analises
 python -m venv .venv
 ```
 
-No Windows PowerShell, ative o ambiente e instale as dependências:
+Ative o ambiente virtual:
 
+**Windows PowerShell**
 ```powershell
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r generator/requirements.txt
 ```
 
-No Linux ou macOS:
-
+**Linux ou macOS**
 ```bash
 source .venv/bin/activate
+```
+
+Instale as dependências:
+
+```bash
 python -m pip install -r generator/requirements.txt
 ```
 
-### 2. Gerar os dados fictícios
+### 2. Gerar os dados
 
 ```bash
 python -m generator.gerar_dados
 ```
 
-Por padrão, os arquivos são gravados em `data/gerados/`. A geração cria oito CSVs e um `manifesto.json` com a configuração, as quantidades geradas e as ocorrências intencionais desta execução.
+Os arquivos CSV e o manifesto da execução são gravados em `data/gerados/`.
 
-A configuração padrão prevê:
+A configuração padrão do gerador prevê:
 
-| Entidade | Quantidade configurada |
+| Entidade | Volume |
 |---|---:|
 | Clientes | 20.000 |
 | Vendedores | 300 |
@@ -72,11 +145,8 @@ A configuração padrão prevê:
 | Produtos | 3.000 |
 | Pedidos | 100.000 |
 | Período das compras | 01/11/2024 a 31/10/2026 |
-| Clientes recorrentes | 17,5% da base |
 
-Esses valores descrevem a configuração padrão do gerador. Para relatar os totais de uma execução específica, consulte `data/gerados/manifesto.json`.
-
-A semente padrão é `20261116`. Mantendo a mesma semente, configuração e versões das dependências, a geração é reproduzível. As variáveis de ambiente permitem reduzir o volume para testes locais; por exemplo, no PowerShell:
+Para uma execução menor no PowerShell, por exemplo:
 
 ```powershell
 $env:VOLUME_CLIENTES="200"
@@ -87,23 +157,35 @@ $env:VOLUME_PEDIDOS="1000"
 python -m generator.gerar_dados
 ```
 
+A semente padrão é `20261116`. Mantendo a mesma configuração e as mesmas versões das dependências, a geração é reproduzível. Consulte `data/gerados/manifesto.json` para os totais efetivos de cada execução.
+
 ### 3. Configurar e iniciar o PostgreSQL
 
-No Windows PowerShell:
+Crie o arquivo local de configuração:
 
+**Windows PowerShell**
 ```powershell
 Copy-Item .env.example .env
 ```
 
-No Linux ou macOS:
-
+**Linux ou macOS**
 ```bash
 cp .env.example .env
 ```
 
-Edite `.env` e troque `POSTGRES_PASSWORD` por uma senha local. Não versione esse arquivo: ele já está listado no `.gitignore`.
+No arquivo `.env`, defina uma senha local em `POSTGRES_PASSWORD`. Para o exportador Python, inclua também as variáveis de conexão abaixo, usando a mesma senha:
 
-Depois de gerar os CSVs e iniciar o Docker Desktop:
+```dotenv
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=ecommerce
+PGUSER=ecommerce
+PGPASSWORD=sua_senha_local
+```
+
+Mantenha `PGPASSWORD` igual a `POSTGRES_PASSWORD`. O arquivo `.env` é local e não deve ser enviado ao Git.
+
+Inicie o banco e confira o estado do serviço:
 
 ```bash
 docker compose up -d
@@ -112,9 +194,9 @@ docker compose ps
 
 Aguarde o serviço `banco` ficar saudável (`healthy`).
 
-### 4. Criar as tabelas, carregar os CSVs e verificar a qualidade
+### 4. Criar as tabelas, carregar e validar
 
-Os comandos abaixo usam os valores padrão `ecommerce` para usuário e banco. Caso sejam alterados no `.env`, ajuste os parâmetros `-U` e `-d`.
+Execute na raiz do projeto:
 
 ```bash
 docker compose exec banco psql -U ecommerce -d ecommerce -f /sql/00_schema.sql
@@ -122,150 +204,79 @@ docker compose exec banco psql -U ecommerce -d ecommerce -f /sql/01_carga.sql
 docker compose exec banco psql -U ecommerce -d ecommerce -f /sql/02_qualidade.sql
 ```
 
-A carga lê os CSVs montados em `/dados` dentro do container. O script de qualidade imprime contagens para investigar pedidos sem itens ou pagamentos, divergências entre pagamentos e itens mais frete, avaliações associadas a pedidos não entregues, entregas sem aprovação, pedidos sem avaliação e datas fora de ordem.
+O script de qualidade verifica, entre outros pontos, pedidos sem itens ou pagamentos, divergências financeiras, avaliações associadas a pedidos não entregues e datas fora de ordem. Entregas sem aprovação e pedidos sem avaliação são ocorrências previstas pelo gerador e devem ser interpretadas conforme a documentação.
 
-Para consultar a quantidade de pedidos carregados:
+Consulte [carga e validação](docs/validacao-carga.md) para mais detalhes.
 
-```bash
-docker compose exec banco psql -U ecommerce -d ecommerce -c "SELECT COUNT(*) AS total_pedidos FROM pedidos;"
-```
+### 5. Gerar e abrir o dashboard
 
-Para remover o container e o volume local do banco (isso apaga os dados armazenados no PostgreSQL):
+Com o banco em execução e os dados carregados:
 
 ```bash
-docker compose down -v
-```
-
-## Modelo de dados
-
-O modelo atual possui oito tabelas:
-
-```mermaid
-erDiagram
-    clientes ||--o{ pedidos : realiza
-    pedidos ||--|{ itens_pedido : contem
-    pedidos ||--o{ pagamentos : recebe
-    pedidos ||--o| avaliacoes : recebe
-    produtos ||--o{ itens_pedido : aparece_em
-    vendedores ||--o{ itens_pedido : vende
-    categorias ||--o{ produtos : classifica
-```
-
-| Tabela | Granularidade | Chave primária |
-|---|---|---|
-| `clientes` | Um cadastro sintético por cliente | `id` |
-| `vendedores` | Um cadastro sintético por vendedor | `id` |
-| `categorias` | Uma categoria do catálogo | `id` |
-| `produtos` | Um produto sintético | `id` |
-| `pedidos` | Um pedido por transação | `id` |
-| `itens_pedido` | Um produto dentro de um pedido | (`pedido_id`, `sequencia`) |
-| `pagamentos` | Uma ocorrência de pagamento por pedido | (`pedido_id`, `sequencia`) |
-| `avaliacoes` | No máximo uma avaliação por pedido | `id` |
-
-A descrição das colunas, relacionamentos e decisões do modelo está em [`docs/modelo-de-dados.md`](docs/modelo-de-dados.md).
-
-## Dashboard executivo
-
-A primeira versão do painel está em `dashboard/`. Ela apresenta KPIs, evolução mensal do faturamento, distribuição por status, faturamento por categoria e estado, ranking de vendedores, indicadores de entrega e meios de pagamento.
-
-Para gerar os dados do painel a partir do PostgreSQL:
-
-```bash
-python -m pip install -r generator/requirements.txt
 python -m dashboard.exportar
 python -m http.server 8000
 ```
 
-Com o servidor iniciado na raiz do projeto, acesse `http://localhost:8000/dashboard/`. O exportador lê as credenciais do arquivo local `.env` e grava `data/dashboard.json`. Não versione o arquivo `.env`. O JSON só é atualizado quando o exportador é executado; automação em nuvem exige um PostgreSQL acessível ao runner e credenciais configuradas como GitHub Secrets.
+Acesse [http://localhost:8000/dashboard/](http://localhost:8000/dashboard/) no navegador. Mantenha o terminal do servidor aberto enquanto utiliza o painel.
 
-As definições dos indicadores, o recorte temporal e as limitações estão em [docs/dashboard.md](docs/dashboard.md). A primeira versão deve ser considerada estrutural até que as consultas sejam executadas e conferidas no PostgreSQL com dados gerados.
+O exportador executa as oito consultas em `sql/03_dashboard/` e grava os resultados em `data/dashboard.json`. O JSON é atualizado quando o exportador é executado.
 
-## Análises adicionais previstas
+## Consultas SQL disponíveis
 
-As consultas abaixo fazem parte do escopo planejado. Elas serão adicionadas em `sql/03_analises/` e executadas antes de serem apresentadas como resultados do projeto.
+### Análises gerais — `sql/03_analises/`
 
-| # | Pergunta de análise | Técnicas previstas |
-|---|---|---|
-| 01 | Como evolui o faturamento mensal? | CTE, `LAG` e variação mês a mês |
-| 02 | Qual a tendência do faturamento suavizada? | Média móvel e window frame |
-| 03 | Qual o ticket médio por mês e categoria? | Agregação e `JOIN` |
-| 04 | Em que etapa do funil os pedidos se concentram? | Agregação condicional |
-| 05 | Quais categorias concentram a receita? | `SUM() OVER` e Pareto |
-| 06 | Como a receita se distribui por estado? | Participação percentual |
-| 07 | Quais vendedores se destacam por categoria? | `RANK`, `DENSE_RANK` e `PARTITION BY` |
-| 08 | Quanto demora e atrasa a entrega por estado? | Diferença de datas e agregações |
-| 09 | Como o atraso se relaciona com as avaliações? | `CASE` e agregação |
-| 10 | Como os clientes retornam após a primeira compra? | Coortes mensais e retenção |
-| 11 | Como segmentar clientes por RFM? | Recência, frequência, valor monetário e `NTILE` |
-| 12 | Qual a taxa de recompra? | CTE e agrupamento |
-| 13 | Quais meios de pagamento e parcelas aparecem com maior frequência? | Agrupamento e participação |
-| 14 | Em quais dias e horários ocorrem mais pedidos? | `EXTRACT` e faixas de horário |
-| 15 | Quais produtos apresentam maior proporção de avaliações baixas? | `HAVING` e amostra mínima |
+1. Faturamento mensal.
+2. Média móvel.
+3. Ticket por categoria e mês.
+4. Distribuição de status.
+5. Pareto por categoria.
+6. Receita por estado.
+7. Ranking de vendedores por categoria.
+8. Entregas por estado.
 
-## Qualidade de dados
+### Consultas do dashboard — `sql/03_dashboard/`
 
-O arquivo atual [`sql/02_qualidade.sql`](sql/02_qualidade.sql) verifica:
+Oito consultas específicas alimentam os KPIs, gráficos e tabelas do painel. As definições e limitações dos indicadores estão descritas em [docs/dashboard.md](docs/dashboard.md).
 
-- Pedidos sem itens e pedidos sem pagamento.
-- Conciliação do valor pago com a soma de preço e frete dos itens.
-- Avaliações vinculadas a pedidos não entregues.
-- Entregas sem aprovação e pedidos sem avaliação, que são ocorrências previstas pelo gerador e devem ser quantificadas.
-- Datas operacionais fora de ordem.
-- Distribuição dos pedidos por status.
+## Qualidade e validação
 
-As restrições `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL` e `CHECK` também protegem a integridade durante a carga. As contagens reais da última execução devem ser registradas depois de rodar o script no PostgreSQL; não são preenchidas antecipadamente neste README.
+A integridade é protegida por chaves primárias, chaves estrangeiras, restrições `NOT NULL` e `CHECK`. O projeto também possui um script SQL dedicado a verificações pós-carga e testes automatizados para o gerador.
 
-Mais detalhes sobre as ocorrências intencionais estão em [`docs/validacao-carga.md`](docs/validacao-carga.md) e [`docs/modelo-de-dados.md`](docs/modelo-de-dados.md).
+O estado de execução e as próximas atividades são acompanhados em [docs/plano-execucao.md](docs/plano-execucao.md). A comparação de desempenho com `EXPLAIN (ANALYZE, BUFFERS)` permanece como uma etapa futura; não são declarados ganhos de performance ainda não medidos.
 
-## Resultados e otimização
-
-Os CSVs das análises, resumos e evidências de execução serão armazenados em `resultados/` quando as consultas analíticas forem implementadas. As amostras e interpretações serão incluídas aqui somente depois de uma execução real.
-
-A etapa de otimização comparará três consultas antes e depois de índices, usando `EXPLAIN (ANALYZE, BUFFERS)`. Os planos, tempos medidos e limitações serão documentados em `docs/otimizacao.md`. Não há tempos ou ganhos de desempenho declarados nesta versão, pois essa comparação ainda não foi executada.
-
-## Estrutura atual do repositório
+## Estrutura do projeto
 
 ```text
 sql-ecommerce-analises/
-├── README.md
-├── .env.example
-├── .gitignore
-├── docker-compose.yml
-├── generator/
-│   ├── Dockerfile
-│   ├── config.py
-│   ├── gerar_dados.py
-│   └── requirements.txt
+├── dashboard/              # Painel web e exportador PostgreSQL → JSON
+├── data/                   # Dados gerados localmente (não versionados)
+├── docs/                   # Documentação técnica e plano de execução
+├── generator/              # Configuração e geração dos dados sintéticos
 ├── sql/
-│   ├── 00_schema.sql
-│   ├── 01_carga.sql
-│   └── 02_qualidade.sql
-├── tests/
-│   └── test_gerador.py
-└── docs/
-    ├── modelo-de-dados.md
-    └── validacao-carga.md
+│   ├── 00_schema.sql       # Criação das tabelas
+│   ├── 01_carga.sql        # Carga dos CSVs
+│   ├── 02_qualidade.sql    # Verificações de qualidade
+│   ├── 03_analises/        # Consultas analíticas
+│   └── 03_dashboard/       # Consultas do painel
+├── tests/                  # Testes automatizados
+├── .env.example            # Modelo de configuração local
+├── docker-compose.yml
+└── README.md
 ```
 
-Os arquivos de dados gerados ficam em `data/gerados/` durante a execução, mas não devem ser enviados ao Git. O arquivo `.env` também não deve ser versionado.
+## Próximas evoluções
 
-## Decisões e limitações
-
-- Os dados são sintéticos: padrões de sazonalidade, distribuição geográfica, recorrência e relação entre atraso e avaliação são regras definidas no gerador, não observações de clientes reais.
-- Os pesos estaduais são aproximações usadas para diversificar a distribuição geográfica; não são estimativas estatísticas ou dados censitários.
-- O gerador permite volumes menores para testes locais. A configuração padrão foi dimensionada para exercitar consultas analíticas, mas não representa uma base de produção.
-- Datas operacionais são armazenadas como `TIMESTAMP` sem fuso horário e representam um calendário local sintético.
-- A ausência de avaliação é esperada. Uma pequena quantidade de pedidos entregues sem data de aprovação também é intencional e documentada.
-- A data final do período se refere à data da compra; eventos posteriores, como entrega e avaliação, podem ocorrer depois dela.
-
-## O que aprendi
-
-[Preencher com suas palavras: o que foi mais difícil, o que você faria diferente e o que aprendeu sobre SQL, modelagem e qualidade de dados.]
+- Completar o conjunto de análises aprofundadas (coortes, retenção, RFM, recompra e avaliações).
+- Ampliar a validação independente dos resultados do dashboard.
+- Implementar atualização automatizada dos dados em ambiente acessível ao GitHub Actions.
+- Comparar consultas antes e depois de índices com planos de execução e métricas reais.
 
 ## Licença
 
-A licença MIT está disponível em [`LICENSE`](LICENSE).
+Distribuído sob a licença [MIT](LICENSE).
 
-## Autoria
+---
 
-Anna Luisa · [LinkedIn](https://www.linkedin.com/in/SEU-USUARIO) · [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+<p align="center">
+  Desenvolvido por <strong>Anna Luisa</strong> · <a href="https://github.com/annasantosabreu">GitHub</a>
+</p>
