@@ -17,12 +17,12 @@ Este arquivo é o quadro de acompanhamento do projeto. Cada item só pode ser ma
 
 ## Etapa 01 — Dashboard executivo (em andamento)
 
-- [ ] Definir consultas SQL com métricas rastreáveis ao modelo.
-- [ ] Implementar exportador PostgreSQL → JSON.
-- [ ] Implementar KPIs, filtros, gráficos e tabelas.
-- [ ] Adicionar validações automatizadas para consultas/exportação.
+- [x] Definir oito consultas SQL com métricas rastreáveis ao modelo.
+- [x] Implementar exportador PostgreSQL → JSON.
+- [x] Implementar KPIs, filtros, gráficos e tabelas.
+- [x] Adicionar testes estruturais e CI para validar o pacote.
 - [ ] Revisão independente: nomes, granularidade, filtros, nulos, datas e cálculos.
-- [ ] Atualizar README com instruções reais de execução.
+- [x] Atualizar README e documentar execução em `docs/dashboard.md`.
 - [ ] Registrar evidências de execução real antes de publicar resultados.
 
 ## Etapa 02 — Análises aprofundadas
@@ -34,7 +34,7 @@ Este arquivo é o quadro de acompanhamento do projeto. Cada item só pode ser ma
 ## Etapa 03 — Qualidade e automação
 
 - [ ] Consolidar testes automatizados.
-- [ ] Configurar CI para executar testes e verificações estáticas.
+- [x] Criar workflow de CI para testes Python e conferência das oito consultas (execução ainda pendente).
 - [ ] Preparar atualização agendada do JSON somente com banco acessível ao runner.
 - [ ] Documentar segredos e configuração sem versionar credenciais.
 
