@@ -16,7 +16,7 @@ O projeto foi planejado para demonstrar:
 - Análise de coorte, retenção e segmentação RFM.
 - Criação de índices e leitura de planos com `EXPLAIN (ANALYZE, BUFFERS)`.
 
-**Status do desenvolvimento:** o modelo, o gerador e os scripts iniciais de banco, carga e qualidade estão incluídos. As consultas analíticas, a comparação de índices, a automação por Makefile e os resultados finais ainda serão adicionados e validados nas próximas etapas. Este README não apresenta métricas de negócio que ainda não tenham sido obtidas por uma execução real.
+**Status do desenvolvimento:** o modelo, o gerador, os scripts de banco/carga/qualidade e a primeira versão do dashboard executivo estão incluídos. O painel possui oito consultas SQL e um exportador PostgreSQL → JSON. A execução das consultas no banco, a automação agendada, as análises complementares e a comparação de índices ainda precisam ser validadas nas próximas etapas. Este README não apresenta métricas de negócio que ainda não tenham sido obtidas por uma execução real.
 
 ## Stack
 
@@ -164,7 +164,23 @@ erDiagram
 
 A descrição das colunas, relacionamentos e decisões do modelo está em [`docs/modelo-de-dados.md`](docs/modelo-de-dados.md).
 
-## Análises previstas
+## Dashboard executivo
+
+A primeira versão do painel está em `dashboard/`. Ela apresenta KPIs, evolução mensal do faturamento, distribuição por status, faturamento por categoria e estado, ranking de vendedores, indicadores de entrega e meios de pagamento.
+
+Para gerar os dados do painel a partir do PostgreSQL:
+
+```bash
+python -m pip install -r generator/requirements.txt
+python -m dashboard.exportar
+python -m http.server 8000
+```
+
+Com o servidor iniciado na raiz do projeto, acesse `http://localhost:8000/dashboard/`. O exportador lê as credenciais do arquivo local `.env` e grava `data/dashboard.json`. Não versione o arquivo `.env`. O JSON só é atualizado quando o exportador é executado; automação em nuvem exige um PostgreSQL acessível ao runner e credenciais configuradas como GitHub Secrets.
+
+As definições dos indicadores, o recorte temporal e as limitações estão em [docs/dashboard.md](docs/dashboard.md). A primeira versão deve ser considerada estrutural até que as consultas sejam executadas e conferidas no PostgreSQL com dados gerados.
+
+## Análises adicionais previstas
 
 As consultas abaixo fazem parte do escopo planejado. Elas serão adicionadas em `sql/03_analises/` e executadas antes de serem apresentadas como resultados do projeto.
 
