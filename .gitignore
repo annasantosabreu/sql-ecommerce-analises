@@ -1,0 +1,19 @@
+# Dados gerados: nao versionar CSVs nem manifestos de execucao.
+data/gerados/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Ambiente e segredos
+.env
+*.log
+
+# Sistema operacional e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
