@@ -13,11 +13,13 @@ from pathlib import Path
 from typing import Any
 
 import psycopg
+from dotenv import load_dotenv
 from psycopg.rows import dict_row
 
 ROOT = Path(__file__).resolve().parents[1]
 SQL_DIR = ROOT / "sql" / "03_dashboard"
 OUTPUT = ROOT / "data" / "dashboard.json"
+load_dotenv(ROOT / ".env")
 
 QUERIES = {
     "kpis": "01_kpis.sql",
