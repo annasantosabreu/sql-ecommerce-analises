@@ -80,7 +80,6 @@ function render(){
  chart('categoryChart','bar',cats.map(r=>r.categoria),[{label:'Faturamento',data:cats.map(r=>r.faturamento),backgroundColor:'#818cf8',borderRadius:5}],{indexAxis:'y',plugins:{legend:{display:false}}});
  const states=source.faturamento_estado.slice(0,10);
  chart('stateChart','bar',states.map(r=>r.estado),[{label:'Faturamento',data:states.map(r=>r.faturamento),backgroundColor:'#2dd4bf',borderRadius:5}],{plugins:{legend:{display:false}}});
- rows('vendors',source.top_vendedores,r=>r);
  rows('vendors',source.top_vendedores,[r=>'#'+r.vendedor_id,r=>r.estado,r=>num(r.pedidos),r=>brl(r.valor_produtos)]);
  rows('logistics',source.entregas_estado,[r=>r.estado,r=>num(r.entregas),r=>num(r.prazo_medio_dias)+' d',r=>num(r.atraso_medio_dias)+' d',r=>num(r.entregas_atrasadas)]);
  rows('payments',source.pagamentos,[r=>r.tipo.replaceAll('_',' '),r=>num(r.pedidos),r=>brl(r.valor_pago),r=>num(r.media_parcelas)]);
