@@ -1,0 +1,3436 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-11-16T14:58:30.573514+00:00",
+    "synthetic_data": true,
+    "source": "PostgreSQL 16",
+    "query_count": 8,
+    "definitions": {
+      "revenue": "Soma de itens_pedido.preco; frete exibido separadamente.",
+      "commercial_orders": "Pedidos com status diferente de cancelado.",
+      "delivery_delay": "Data de entrega posterior a data estimada."
+    }
+  },
+  "queries": {
+    "faturamento_mensal": [
+      {
+        "mes": "2024-11-01",
+        "pedidos": 60,
+        "clientes_unicos": 37,
+        "receita_produtos": 8865.05,
+        "frete": 2853.93,
+        "valor_pedidos_com_frete": 11718.98,
+        "ticket_medio_produtos": 147.75,
+        "variacao_absoluta": null,
+        "variacao_percentual": null
+      },
+      {
+        "mes": "2024-12-01",
+        "pedidos": 56,
+        "clientes_unicos": 41,
+        "receita_produtos": 7330.43,
+        "frete": 2979.08,
+        "valor_pedidos_com_frete": 10309.51,
+        "ticket_medio_produtos": 130.9,
+        "variacao_absoluta": -1534.62,
+        "variacao_percentual": -17.31
+      },
+      {
+        "mes": "2025-01-01",
+        "pedidos": 36,
+        "clientes_unicos": 23,
+        "receita_produtos": 4552.37,
+        "frete": 1879.85,
+        "valor_pedidos_com_frete": 6432.22,
+        "ticket_medio_produtos": 126.45,
+        "variacao_absoluta": -2778.06,
+        "variacao_percentual": -37.9
+      },
+      {
+        "mes": "2025-02-01",
+        "pedidos": 31,
+        "clientes_unicos": 23,
+        "receita_produtos": 5064.95,
+        "frete": 1595.08,
+        "valor_pedidos_com_frete": 6660.03,
+        "ticket_medio_produtos": 163.39,
+        "variacao_absoluta": 512.58,
+        "variacao_percentual": 11.26
+      },
+      {
+        "mes": "2025-03-01",
+        "pedidos": 40,
+        "clientes_unicos": 31,
+        "receita_produtos": 5637.68,
+        "frete": 2151.45,
+        "valor_pedidos_com_frete": 7789.13,
+        "ticket_medio_produtos": 140.94,
+        "variacao_absoluta": 572.73,
+        "variacao_percentual": 11.31
+      },
+      {
+        "mes": "2025-04-01",
+        "pedidos": 28,
+        "clientes_unicos": 21,
+        "receita_produtos": 3180.12,
+        "frete": 1342.52,
+        "valor_pedidos_com_frete": 4522.64,
+        "ticket_medio_produtos": 113.58,
+        "variacao_absoluta": -2457.56,
+        "variacao_percentual": -43.59
+      },
+      {
+        "mes": "2025-05-01",
+        "pedidos": 27,
+        "clientes_unicos": 21,
+        "receita_produtos": 4490.26,
+        "frete": 1341.21,
+        "valor_pedidos_com_frete": 5831.47,
+        "ticket_medio_produtos": 166.31,
+        "variacao_absoluta": 1310.14,
+        "variacao_percentual": 41.2
+      },
+      {
+        "mes": "2025-06-01",
+        "pedidos": 38,
+        "clientes_unicos": 27,
+        "receita_produtos": 5800.31,
+        "frete": 2244.95,
+        "valor_pedidos_com_frete": 8045.26,
+        "ticket_medio_produtos": 152.64,
+        "variacao_absoluta": 1310.05,
+        "variacao_percentual": 29.18
+      },
+      {
+        "mes": "2025-07-01",
+        "pedidos": 45,
+        "clientes_unicos": 30,
+        "receita_produtos": 5710.31,
+        "frete": 2060.18,
+        "valor_pedidos_com_frete": 7770.49,
+        "ticket_medio_produtos": 126.9,
+        "variacao_absoluta": -90.0,
+        "variacao_percentual": -1.55
+      },
+      {
+        "mes": "2025-08-01",
+        "pedidos": 36,
+        "clientes_unicos": 29,
+        "receita_produtos": 4847.69,
+        "frete": 1753.31,
+        "valor_pedidos_com_frete": 6601.0,
+        "ticket_medio_produtos": 134.66,
+        "variacao_absoluta": -862.62,
+        "variacao_percentual": -15.11
+      },
+      {
+        "mes": "2025-09-01",
+        "pedidos": 38,
+        "clientes_unicos": 24,
+        "receita_produtos": 5849.03,
+        "frete": 1878.38,
+        "valor_pedidos_com_frete": 7727.41,
+        "ticket_medio_produtos": 153.92,
+        "variacao_absoluta": 1001.34,
+        "variacao_percentual": 20.66
+      },
+      {
+        "mes": "2025-10-01",
+        "pedidos": 38,
+        "clientes_unicos": 28,
+        "receita_produtos": 5046.36,
+        "frete": 1899.85,
+        "valor_pedidos_com_frete": 6946.21,
+        "ticket_medio_produtos": 132.8,
+        "variacao_absoluta": -802.67,
+        "variacao_percentual": -13.72
+      },
+      {
+        "mes": "2025-11-01",
+        "pedidos": 47,
+        "clientes_unicos": 28,
+        "receita_produtos": 7284.16,
+        "frete": 2393.38,
+        "valor_pedidos_com_frete": 9677.54,
+        "ticket_medio_produtos": 154.98,
+        "variacao_absoluta": 2237.8,
+        "variacao_percentual": 44.34
+      },
+      {
+        "mes": "2025-12-01",
+        "pedidos": 50,
+        "clientes_unicos": 33,
+        "receita_produtos": 7257.08,
+        "frete": 2975.69,
+        "valor_pedidos_com_frete": 10232.77,
+        "ticket_medio_produtos": 145.14,
+        "variacao_absoluta": -27.08,
+        "variacao_percentual": -0.37
+      },
+      {
+        "mes": "2026-01-01",
+        "pedidos": 40,
+        "clientes_unicos": 32,
+        "receita_produtos": 5653.69,
+        "frete": 2147.65,
+        "valor_pedidos_com_frete": 7801.34,
+        "ticket_medio_produtos": 141.34,
+        "variacao_absoluta": -1603.39,
+        "variacao_percentual": -22.09
+      },
+      {
+        "mes": "2026-02-01",
+        "pedidos": 31,
+        "clientes_unicos": 21,
+        "receita_produtos": 4818.79,
+        "frete": 1500.23,
+        "valor_pedidos_com_frete": 6319.02,
+        "ticket_medio_produtos": 155.44,
+        "variacao_absoluta": -834.9,
+        "variacao_percentual": -14.77
+      },
+      {
+        "mes": "2026-03-01",
+        "pedidos": 32,
+        "clientes_unicos": 24,
+        "receita_produtos": 4312.97,
+        "frete": 1534.46,
+        "valor_pedidos_com_frete": 5847.43,
+        "ticket_medio_produtos": 134.78,
+        "variacao_absoluta": -505.82,
+        "variacao_percentual": -10.5
+      },
+      {
+        "mes": "2026-04-01",
+        "pedidos": 37,
+        "clientes_unicos": 27,
+        "receita_produtos": 5463.33,
+        "frete": 1732.15,
+        "valor_pedidos_com_frete": 7195.48,
+        "ticket_medio_produtos": 147.66,
+        "variacao_absoluta": 1150.36,
+        "variacao_percentual": 26.67
+      },
+      {
+        "mes": "2026-05-01",
+        "pedidos": 27,
+        "clientes_unicos": 19,
+        "receita_produtos": 4263.48,
+        "frete": 1551.01,
+        "valor_pedidos_com_frete": 5814.49,
+        "ticket_medio_produtos": 157.91,
+        "variacao_absoluta": -1199.85,
+        "variacao_percentual": -21.96
+      },
+      {
+        "mes": "2026-06-01",
+        "pedidos": 36,
+        "clientes_unicos": 25,
+        "receita_produtos": 4380.04,
+        "frete": 1487.93,
+        "valor_pedidos_com_frete": 5867.97,
+        "ticket_medio_produtos": 121.67,
+        "variacao_absoluta": 116.56,
+        "variacao_percentual": 2.73
+      },
+      {
+        "mes": "2026-07-01",
+        "pedidos": 36,
+        "clientes_unicos": 25,
+        "receita_produtos": 4874.88,
+        "frete": 1958.83,
+        "valor_pedidos_com_frete": 6833.71,
+        "ticket_medio_produtos": 135.41,
+        "variacao_absoluta": 494.84,
+        "variacao_percentual": 11.3
+      },
+      {
+        "mes": "2026-08-01",
+        "pedidos": 41,
+        "clientes_unicos": 29,
+        "receita_produtos": 6351.0,
+        "frete": 1971.5,
+        "valor_pedidos_com_frete": 8322.5,
+        "ticket_medio_produtos": 154.9,
+        "variacao_absoluta": 1476.12,
+        "variacao_percentual": 30.28
+      },
+      {
+        "mes": "2026-09-01",
+        "pedidos": 28,
+        "clientes_unicos": 21,
+        "receita_produtos": 4558.04,
+        "frete": 1566.23,
+        "valor_pedidos_com_frete": 6124.27,
+        "ticket_medio_produtos": 162.79,
+        "variacao_absoluta": -1792.96,
+        "variacao_percentual": -28.23
+      },
+      {
+        "mes": "2026-10-01",
+        "pedidos": 44,
+        "clientes_unicos": 22,
+        "receita_produtos": 5977.45,
+        "frete": 2748.07,
+        "valor_pedidos_com_frete": 8725.52,
+        "ticket_medio_produtos": 135.85,
+        "variacao_absoluta": 1419.41,
+        "variacao_percentual": 31.14
+      }
+    ],
+    "media_movel": [
+      {
+        "mes": "2024-11-01",
+        "receita_produtos": 8865.05,
+        "media_movel_3_meses": 8865.05
+      },
+      {
+        "mes": "2024-12-01",
+        "receita_produtos": 7330.43,
+        "media_movel_3_meses": 8097.74
+      },
+      {
+        "mes": "2025-01-01",
+        "receita_produtos": 4552.37,
+        "media_movel_3_meses": 6915.95
+      },
+      {
+        "mes": "2025-02-01",
+        "receita_produtos": 5064.95,
+        "media_movel_3_meses": 5649.25
+      },
+      {
+        "mes": "2025-03-01",
+        "receita_produtos": 5637.68,
+        "media_movel_3_meses": 5085.0
+      },
+      {
+        "mes": "2025-04-01",
+        "receita_produtos": 3180.12,
+        "media_movel_3_meses": 4627.58
+      },
+      {
+        "mes": "2025-05-01",
+        "receita_produtos": 4490.26,
+        "media_movel_3_meses": 4436.02
+      },
+      {
+        "mes": "2025-06-01",
+        "receita_produtos": 5800.31,
+        "media_movel_3_meses": 4490.23
+      },
+      {
+        "mes": "2025-07-01",
+        "receita_produtos": 5710.31,
+        "media_movel_3_meses": 5333.63
+      },
+      {
+        "mes": "2025-08-01",
+        "receita_produtos": 4847.69,
+        "media_movel_3_meses": 5452.77
+      },
+      {
+        "mes": "2025-09-01",
+        "receita_produtos": 5849.03,
+        "media_movel_3_meses": 5469.01
+      },
+      {
+        "mes": "2025-10-01",
+        "receita_produtos": 5046.36,
+        "media_movel_3_meses": 5247.69
+      },
+      {
+        "mes": "2025-11-01",
+        "receita_produtos": 7284.16,
+        "media_movel_3_meses": 6059.85
+      },
+      {
+        "mes": "2025-12-01",
+        "receita_produtos": 7257.08,
+        "media_movel_3_meses": 6529.2
+      },
+      {
+        "mes": "2026-01-01",
+        "receita_produtos": 5653.69,
+        "media_movel_3_meses": 6731.64
+      },
+      {
+        "mes": "2026-02-01",
+        "receita_produtos": 4818.79,
+        "media_movel_3_meses": 5909.85
+      },
+      {
+        "mes": "2026-03-01",
+        "receita_produtos": 4312.97,
+        "media_movel_3_meses": 4928.48
+      },
+      {
+        "mes": "2026-04-01",
+        "receita_produtos": 5463.33,
+        "media_movel_3_meses": 4865.03
+      },
+      {
+        "mes": "2026-05-01",
+        "receita_produtos": 4263.48,
+        "media_movel_3_meses": 4679.93
+      },
+      {
+        "mes": "2026-06-01",
+        "receita_produtos": 4380.04,
+        "media_movel_3_meses": 4702.28
+      },
+      {
+        "mes": "2026-07-01",
+        "receita_produtos": 4874.88,
+        "media_movel_3_meses": 4506.13
+      },
+      {
+        "mes": "2026-08-01",
+        "receita_produtos": 6351.0,
+        "media_movel_3_meses": 5201.97
+      },
+      {
+        "mes": "2026-09-01",
+        "receita_produtos": 4558.04,
+        "media_movel_3_meses": 5261.31
+      },
+      {
+        "mes": "2026-10-01",
+        "receita_produtos": 5977.45,
+        "media_movel_3_meses": 5628.83
+      }
+    ],
+    "ticket_categoria_mes": [
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 27,
+        "receita_produtos": 1760.92,
+        "frete": 544.38,
+        "ticket_medio_categoria": 65.22
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 14,
+        "receita_produtos": 1660.17,
+        "frete": 352.06,
+        "ticket_medio_categoria": 118.58
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 19,
+        "receita_produtos": 1350.71,
+        "frete": 628.2,
+        "ticket_medio_categoria": 71.09
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 16,
+        "receita_produtos": 1079.11,
+        "frete": 380.18,
+        "ticket_medio_categoria": 67.44
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1001.87,
+        "frete": 318.95,
+        "ticket_medio_categoria": 77.07
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 784.94,
+        "frete": 315.42,
+        "ticket_medio_categoria": 78.49
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 630.59,
+        "frete": 170.12,
+        "ticket_medio_categoria": 78.82
+      },
+      {
+        "mes": "2024-11-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 596.74,
+        "frete": 144.62,
+        "ticket_medio_categoria": 85.25
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 19,
+        "receita_produtos": 1819.07,
+        "frete": 501.84,
+        "ticket_medio_categoria": 95.74
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 21,
+        "receita_produtos": 1376.05,
+        "frete": 521.43,
+        "ticket_medio_categoria": 65.53
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 17,
+        "receita_produtos": 1191.6,
+        "frete": 395.78,
+        "ticket_medio_categoria": 70.09
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 15,
+        "receita_produtos": 1119.68,
+        "frete": 570.72,
+        "ticket_medio_categoria": 74.65
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 733.45,
+        "frete": 379.07,
+        "ticket_medio_categoria": 61.12
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 606.15,
+        "frete": 459.22,
+        "ticket_medio_categoria": 46.63
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 275.69,
+        "frete": 111.91,
+        "ticket_medio_categoria": 55.14
+      },
+      {
+        "mes": "2024-12-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 2,
+        "receita_produtos": 208.74,
+        "frete": 39.11,
+        "ticket_medio_categoria": 104.37
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 15,
+        "receita_produtos": 858.71,
+        "frete": 472.56,
+        "ticket_medio_categoria": 57.25
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 14,
+        "receita_produtos": 766.14,
+        "frete": 410.12,
+        "ticket_medio_categoria": 54.72
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 727.11,
+        "frete": 178.82,
+        "ticket_medio_categoria": 103.87
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 584.31,
+        "frete": 106.89,
+        "ticket_medio_categoria": 83.47
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 575.6,
+        "frete": 233.38,
+        "ticket_medio_categoria": 63.96
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 515.08,
+        "frete": 182.06,
+        "ticket_medio_categoria": 57.23
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 328.31,
+        "frete": 212.81,
+        "ticket_medio_categoria": 46.9
+      },
+      {
+        "mes": "2025-01-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 197.11,
+        "frete": 83.21,
+        "ticket_medio_categoria": 65.7
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 1087.23,
+        "frete": 246.9,
+        "ticket_medio_categoria": 98.84
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 928.43,
+        "frete": 293.1,
+        "ticket_medio_categoria": 71.42
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 796.96,
+        "frete": 286.84,
+        "ticket_medio_categoria": 72.45
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 660.34,
+        "frete": 208.75,
+        "ticket_medio_categoria": 82.54
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 612.91,
+        "frete": 251.43,
+        "ticket_medio_categoria": 76.61
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 429.48,
+        "frete": 64.26,
+        "ticket_medio_categoria": 85.9
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 388.66,
+        "frete": 140.54,
+        "ticket_medio_categoria": 97.17
+      },
+      {
+        "mes": "2025-02-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 160.94,
+        "frete": 103.26,
+        "ticket_medio_categoria": 40.24
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 1000.8,
+        "frete": 138.52,
+        "ticket_medio_categoria": 111.2
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 16,
+        "receita_produtos": 882.1,
+        "frete": 710.02,
+        "ticket_medio_categoria": 55.13
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 823.05,
+        "frete": 327.49,
+        "ticket_medio_categoria": 63.31
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 794.15,
+        "frete": 205.1,
+        "ticket_medio_categoria": 88.24
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 705.55,
+        "frete": 338.16,
+        "ticket_medio_categoria": 54.27
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 605.38,
+        "frete": 143.47,
+        "ticket_medio_categoria": 67.26
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 572.65,
+        "frete": 212.69,
+        "ticket_medio_categoria": 71.58
+      },
+      {
+        "mes": "2025-03-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 254.0,
+        "frete": 76.0,
+        "ticket_medio_categoria": 84.67
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 872.93,
+        "frete": 303.74,
+        "ticket_medio_categoria": 67.15
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 758.09,
+        "frete": 209.98,
+        "ticket_medio_categoria": 126.35
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 615.27,
+        "frete": 271.61,
+        "ticket_medio_categoria": 68.36
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 307.58,
+        "frete": 223.04,
+        "ticket_medio_categoria": 43.94
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 196.95,
+        "frete": 106.74,
+        "ticket_medio_categoria": 65.65
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 179.8,
+        "frete": 152.82,
+        "ticket_medio_categoria": 25.69
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 139.57,
+        "frete": 49.93,
+        "ticket_medio_categoria": 46.52
+      },
+      {
+        "mes": "2025-04-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 1,
+        "receita_produtos": 109.93,
+        "frete": 24.66,
+        "ticket_medio_categoria": 109.93
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1350.9,
+        "frete": 408.01,
+        "ticket_medio_categoria": 103.92
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 796.91,
+        "frete": 260.83,
+        "ticket_medio_categoria": 88.55
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 527.18,
+        "frete": 166.23,
+        "ticket_medio_categoria": 105.44
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 425.14,
+        "frete": 92.14,
+        "ticket_medio_categoria": 85.03
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 416.79,
+        "frete": 94.99,
+        "ticket_medio_categoria": 104.2
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 415.65,
+        "frete": 65.43,
+        "ticket_medio_categoria": 83.13
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 370.92,
+        "frete": 69.7,
+        "ticket_medio_categoria": 92.73
+      },
+      {
+        "mes": "2025-05-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 186.77,
+        "frete": 183.88,
+        "ticket_medio_categoria": 26.68
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 17,
+        "receita_produtos": 1250.84,
+        "frete": 574.91,
+        "ticket_medio_categoria": 73.58
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 1067.25,
+        "frete": 289.03,
+        "ticket_medio_categoria": 106.73
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 826.16,
+        "frete": 314.4,
+        "ticket_medio_categoria": 82.62
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 694.83,
+        "frete": 116.04,
+        "ticket_medio_categoria": 115.81
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 653.66,
+        "frete": 256.94,
+        "ticket_medio_categoria": 65.37
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 574.62,
+        "frete": 280.4,
+        "ticket_medio_categoria": 57.46
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 457.31,
+        "frete": 330.52,
+        "ticket_medio_categoria": 50.81
+      },
+      {
+        "mes": "2025-06-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 275.64,
+        "frete": 82.71,
+        "ticket_medio_categoria": 68.91
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 19,
+        "receita_produtos": 1747.07,
+        "frete": 502.71,
+        "ticket_medio_categoria": 91.95
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1006.43,
+        "frete": 304.32,
+        "ticket_medio_categoria": 77.42
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 784.23,
+        "frete": 381.46,
+        "ticket_medio_categoria": 78.42
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 610.25,
+        "frete": 294.04,
+        "ticket_medio_categoria": 61.03
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 534.14,
+        "frete": 122.24,
+        "ticket_medio_categoria": 76.31
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 362.36,
+        "frete": 104.92,
+        "ticket_medio_categoria": 51.77
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 340.2,
+        "frete": 130.97,
+        "ticket_medio_categoria": 68.04
+      },
+      {
+        "mes": "2025-07-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 325.63,
+        "frete": 219.52,
+        "ticket_medio_categoria": 54.27
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 20,
+        "receita_produtos": 1192.14,
+        "frete": 443.57,
+        "ticket_medio_categoria": 59.61
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 1046.87,
+        "frete": 490.89,
+        "ticket_medio_categoria": 95.17
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 838.46,
+        "frete": 279.79,
+        "ticket_medio_categoria": 64.5
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 552.35,
+        "frete": 91.31,
+        "ticket_medio_categoria": 92.06
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 526.7,
+        "frete": 93.98,
+        "ticket_medio_categoria": 75.24
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 381.05,
+        "frete": 170.17,
+        "ticket_medio_categoria": 54.44
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 254.77,
+        "frete": 109.57,
+        "ticket_medio_categoria": 63.69
+      },
+      {
+        "mes": "2025-08-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 2,
+        "receita_produtos": 55.35,
+        "frete": 74.03,
+        "ticket_medio_categoria": 27.68
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 1097.04,
+        "frete": 576.96,
+        "ticket_medio_categoria": 91.42
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 954.65,
+        "frete": 183.1,
+        "ticket_medio_categoria": 95.47
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 908.12,
+        "frete": 203.83,
+        "ticket_medio_categoria": 69.86
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 833.49,
+        "frete": 154.2,
+        "ticket_medio_categoria": 75.77
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 633.86,
+        "frete": 255.14,
+        "ticket_medio_categoria": 70.43
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 624.37,
+        "frete": 217.1,
+        "ticket_medio_categoria": 78.05
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 521.7,
+        "frete": 241.26,
+        "ticket_medio_categoria": 74.53
+      },
+      {
+        "mes": "2025-09-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 275.8,
+        "frete": 46.79,
+        "ticket_medio_categoria": 91.93
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 16,
+        "receita_produtos": 1238.65,
+        "frete": 386.28,
+        "ticket_medio_categoria": 77.42
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 14,
+        "receita_produtos": 940.86,
+        "frete": 387.75,
+        "ticket_medio_categoria": 67.2
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 898.09,
+        "frete": 156.29,
+        "ticket_medio_categoria": 99.79
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 539.13,
+        "frete": 237.88,
+        "ticket_medio_categoria": 53.91
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 437.66,
+        "frete": 274.94,
+        "ticket_medio_categoria": 48.63
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 424.42,
+        "frete": 124.23,
+        "ticket_medio_categoria": 106.11
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 401.65,
+        "frete": 181.45,
+        "ticket_medio_categoria": 57.38
+      },
+      {
+        "mes": "2025-10-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 165.9,
+        "frete": 151.03,
+        "ticket_medio_categoria": 33.18
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 20,
+        "receita_produtos": 1957.5,
+        "frete": 535.3,
+        "ticket_medio_categoria": 97.88
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 17,
+        "receita_produtos": 1596.71,
+        "frete": 368.96,
+        "ticket_medio_categoria": 93.92
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 815.07,
+        "frete": 354.95,
+        "ticket_medio_categoria": 62.7
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 804.56,
+        "frete": 336.94,
+        "ticket_medio_categoria": 80.46
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 730.21,
+        "frete": 398.93,
+        "ticket_medio_categoria": 73.02
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 690.15,
+        "frete": 127.81,
+        "ticket_medio_categoria": 115.03
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 423.86,
+        "frete": 147.49,
+        "ticket_medio_categoria": 52.98
+      },
+      {
+        "mes": "2025-11-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 266.1,
+        "frete": 123.0,
+        "ticket_medio_categoria": 53.22
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 19,
+        "receita_produtos": 2203.69,
+        "frete": 542.85,
+        "ticket_medio_categoria": 115.98
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 22,
+        "receita_produtos": 1383.02,
+        "frete": 665.03,
+        "ticket_medio_categoria": 62.86
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 15,
+        "receita_produtos": 932.48,
+        "frete": 325.91,
+        "ticket_medio_categoria": 62.17
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 920.48,
+        "frete": 477.82,
+        "ticket_medio_categoria": 83.68
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 16,
+        "receita_produtos": 558.43,
+        "frete": 503.08,
+        "ticket_medio_categoria": 34.9
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 509.27,
+        "frete": 205.51,
+        "ticket_medio_categoria": 63.66
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 502.3,
+        "frete": 133.58,
+        "ticket_medio_categoria": 125.58
+      },
+      {
+        "mes": "2025-12-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 247.41,
+        "frete": 121.91,
+        "ticket_medio_categoria": 61.85
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1135.06,
+        "frete": 495.44,
+        "ticket_medio_categoria": 87.31
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 15,
+        "receita_produtos": 1098.15,
+        "frete": 415.08,
+        "ticket_medio_categoria": 73.21
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 1066.58,
+        "frete": 354.72,
+        "ticket_medio_categoria": 106.66
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 752.64,
+        "frete": 176.67,
+        "ticket_medio_categoria": 83.63
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 589.6,
+        "frete": 116.27,
+        "ticket_medio_categoria": 73.7
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 365.86,
+        "frete": 256.72,
+        "ticket_medio_categoria": 60.98
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 340.19,
+        "frete": 237.82,
+        "ticket_medio_categoria": 37.8
+      },
+      {
+        "mes": "2026-01-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 305.61,
+        "frete": 94.93,
+        "ticket_medio_categoria": 76.4
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 14,
+        "receita_produtos": 1565.97,
+        "frete": 343.93,
+        "ticket_medio_categoria": 111.86
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 760.52,
+        "frete": 136.76,
+        "ticket_medio_categoria": 84.5
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 746.28,
+        "frete": 262.38,
+        "ticket_medio_categoria": 93.29
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 702.91,
+        "frete": 380.88,
+        "ticket_medio_categoria": 63.9
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 418.35,
+        "frete": 128.12,
+        "ticket_medio_categoria": 83.67
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 363.73,
+        "frete": 100.43,
+        "ticket_medio_categoria": 90.93
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 156.05,
+        "frete": 79.77,
+        "ticket_medio_categoria": 52.02
+      },
+      {
+        "mes": "2026-02-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 104.98,
+        "frete": 67.96,
+        "ticket_medio_categoria": 34.99
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 967.3,
+        "frete": 236.38,
+        "ticket_medio_categoria": 120.91
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 905.18,
+        "frete": 195.44,
+        "ticket_medio_categoria": 82.29
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 893.75,
+        "frete": 324.06,
+        "ticket_medio_categoria": 89.38
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 653.37,
+        "frete": 249.66,
+        "ticket_medio_categoria": 54.45
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 259.92,
+        "frete": 40.14,
+        "ticket_medio_categoria": 86.64
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 238.23,
+        "frete": 257.53,
+        "ticket_medio_categoria": 39.71
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 220.37,
+        "frete": 131.09,
+        "ticket_medio_categoria": 44.07
+      },
+      {
+        "mes": "2026-03-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 174.85,
+        "frete": 100.16,
+        "ticket_medio_categoria": 43.71
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1152.44,
+        "frete": 346.38,
+        "ticket_medio_categoria": 88.65
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 1150.75,
+        "frete": 264.96,
+        "ticket_medio_categoria": 95.9
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 796.83,
+        "frete": 218.98,
+        "ticket_medio_categoria": 79.68
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 792.2,
+        "frete": 67.04,
+        "ticket_medio_categoria": 99.03
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 584.37,
+        "frete": 356.12,
+        "ticket_medio_categoria": 53.12
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 494.9,
+        "frete": 238.24,
+        "ticket_medio_categoria": 54.99
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 353.42,
+        "frete": 159.87,
+        "ticket_medio_categoria": 58.9
+      },
+      {
+        "mes": "2026-04-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 138.42,
+        "frete": 80.56,
+        "ticket_medio_categoria": 46.14
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 1140.13,
+        "frete": 294.92,
+        "ticket_medio_categoria": 95.01
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 618.87,
+        "frete": 207.37,
+        "ticket_medio_categoria": 77.36
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 588.7,
+        "frete": 220.43,
+        "ticket_medio_categoria": 84.1
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 493.14,
+        "frete": 234.17,
+        "ticket_medio_categoria": 54.79
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 465.45,
+        "frete": 214.87,
+        "ticket_medio_categoria": 66.49
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 403.2,
+        "frete": 102.09,
+        "ticket_medio_categoria": 67.2
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 330.71,
+        "frete": 151.57,
+        "ticket_medio_categoria": 66.14
+      },
+      {
+        "mes": "2026-05-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 223.28,
+        "frete": 125.59,
+        "ticket_medio_categoria": 44.66
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 15,
+        "receita_produtos": 1090.94,
+        "frete": 323.59,
+        "ticket_medio_categoria": 72.73
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 901.26,
+        "frete": 368.7,
+        "ticket_medio_categoria": 75.11
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 7,
+        "receita_produtos": 798.98,
+        "frete": 132.82,
+        "ticket_medio_categoria": 114.14
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 673.78,
+        "frete": 269.97,
+        "ticket_medio_categoria": 61.25
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 374.69,
+        "frete": 149.35,
+        "ticket_medio_categoria": 62.45
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 239.13,
+        "frete": 148.35,
+        "ticket_medio_categoria": 47.83
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 3,
+        "receita_produtos": 189.02,
+        "frete": 42.67,
+        "ticket_medio_categoria": 63.01
+      },
+      {
+        "mes": "2026-06-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 2,
+        "receita_produtos": 112.24,
+        "frete": 52.48,
+        "ticket_medio_categoria": 56.12
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 16,
+        "receita_produtos": 1559.01,
+        "frete": 486.86,
+        "ticket_medio_categoria": 97.44
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 831.41,
+        "frete": 308.28,
+        "ticket_medio_categoria": 83.14
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 540.8,
+        "frete": 250.3,
+        "ticket_medio_categoria": 67.6
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 454.34,
+        "frete": 146.76,
+        "ticket_medio_categoria": 56.79
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 422.76,
+        "frete": 358.96,
+        "ticket_medio_categoria": 46.97
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 371.91,
+        "frete": 95.27,
+        "ticket_medio_categoria": 74.38
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 370.51,
+        "frete": 108.49,
+        "ticket_medio_categoria": 92.63
+      },
+      {
+        "mes": "2026-07-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 324.14,
+        "frete": 203.91,
+        "ticket_medio_categoria": 40.52
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 1432.91,
+        "frete": 251.95,
+        "ticket_medio_categoria": 119.41
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 1096.1,
+        "frete": 436.1,
+        "ticket_medio_categoria": 84.32
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 1076.79,
+        "frete": 334.52,
+        "ticket_medio_categoria": 89.73
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 927.15,
+        "frete": 324.83,
+        "ticket_medio_categoria": 71.32
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 755.19,
+        "frete": 111.4,
+        "ticket_medio_categoria": 94.4
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 748.13,
+        "frete": 244.9,
+        "ticket_medio_categoria": 68.01
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 8,
+        "receita_produtos": 289.62,
+        "frete": 230.01,
+        "ticket_medio_categoria": 36.2
+      },
+      {
+        "mes": "2026-08-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 1,
+        "receita_produtos": 25.11,
+        "frete": 37.79,
+        "ticket_medio_categoria": 25.11
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 1014.42,
+        "frete": 402.82,
+        "ticket_medio_categoria": 92.22
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 12,
+        "receita_produtos": 885.3,
+        "frete": 263.49,
+        "ticket_medio_categoria": 73.78
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 10,
+        "receita_produtos": 877.27,
+        "frete": 274.82,
+        "ticket_medio_categoria": 87.73
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 9,
+        "receita_produtos": 794.05,
+        "frete": 327.2,
+        "ticket_medio_categoria": 88.23
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 491.05,
+        "frete": 101.88,
+        "ticket_medio_categoria": 122.76
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 2,
+        "receita_produtos": 280.9,
+        "frete": 30.25,
+        "ticket_medio_categoria": 140.45
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 2,
+        "receita_produtos": 133.27,
+        "frete": 20.31,
+        "ticket_medio_categoria": 66.64
+      },
+      {
+        "mes": "2026-09-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 81.78,
+        "frete": 145.46,
+        "ticket_medio_categoria": 20.45
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 22,
+        "receita_produtos": 1597.88,
+        "frete": 482.48,
+        "ticket_medio_categoria": 72.63
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 873.26,
+        "frete": 515.09,
+        "ticket_medio_categoria": 67.17
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 760.51,
+        "frete": 332.45,
+        "ticket_medio_categoria": 69.14
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 6,
+        "receita_produtos": 712.19,
+        "frete": 189.71,
+        "ticket_medio_categoria": 118.7
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 11,
+        "receita_produtos": 711.94,
+        "frete": 491.38,
+        "ticket_medio_categoria": 64.72
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 13,
+        "receita_produtos": 695.48,
+        "frete": 511.2,
+        "ticket_medio_categoria": 53.5
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 5,
+        "receita_produtos": 410.7,
+        "frete": 104.56,
+        "ticket_medio_categoria": 82.14
+      },
+      {
+        "mes": "2026-10-01",
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 4,
+        "receita_produtos": 215.49,
+        "frete": 121.2,
+        "ticket_medio_categoria": 53.87
+      }
+    ],
+    "distribuicao_status": [
+      {
+        "status": "entregue",
+        "pedidos": 784,
+        "percentual_pedidos": 78.4
+      },
+      {
+        "status": "cancelado",
+        "pedidos": 78,
+        "percentual_pedidos": 7.8
+      },
+      {
+        "status": "aprovado",
+        "pedidos": 66,
+        "percentual_pedidos": 6.6
+      },
+      {
+        "status": "em_transporte",
+        "pedidos": 40,
+        "percentual_pedidos": 4.0
+      },
+      {
+        "status": "indisponivel",
+        "pedidos": 32,
+        "percentual_pedidos": 3.2
+      }
+    ],
+    "pareto_categoria": [
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "pedidos_com_categoria": 368,
+        "itens_vendidos": 446,
+        "receita_produtos": 27694.92,
+        "participacao_percentual": 21.05,
+        "participacao_acumulada_percentual": 21.05
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "pedidos_com_categoria": 245,
+        "itens_vendidos": 281,
+        "receita_produtos": 25034.74,
+        "participacao_percentual": 19.03,
+        "participacao_acumulada_percentual": 40.08
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "pedidos_com_categoria": 255,
+        "itens_vendidos": 291,
+        "receita_produtos": 18736.15,
+        "participacao_percentual": 14.24,
+        "participacao_acumulada_percentual": 54.32
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "pedidos_com_categoria": 249,
+        "itens_vendidos": 284,
+        "receita_produtos": 16417.8,
+        "participacao_percentual": 12.48,
+        "participacao_acumulada_percentual": 66.8
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "pedidos_com_categoria": 224,
+        "itens_vendidos": 253,
+        "receita_produtos": 15931.44,
+        "participacao_percentual": 12.11,
+        "participacao_acumulada_percentual": 78.91
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "pedidos_com_categoria": 150,
+        "itens_vendidos": 163,
+        "receita_produtos": 12308.17,
+        "participacao_percentual": 9.35,
+        "participacao_acumulada_percentual": 88.26
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "pedidos_com_categoria": 181,
+        "itens_vendidos": 190,
+        "receita_produtos": 9126.38,
+        "participacao_percentual": 6.94,
+        "participacao_acumulada_percentual": 95.2
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "pedidos_com_categoria": 87,
+        "itens_vendidos": 90,
+        "receita_produtos": 6319.87,
+        "participacao_percentual": 4.8,
+        "participacao_acumulada_percentual": 100.0
+      }
+    ],
+    "receita_estado": [
+      {
+        "estado": "SP",
+        "pedidos": 165,
+        "clientes": 49,
+        "receita_produtos": 24941.58,
+        "frete": 9001.43,
+        "participacao_receita_percentual": 18.96,
+        "posicao_receita": 1
+      },
+      {
+        "estado": "BA",
+        "pedidos": 151,
+        "clientes": 18,
+        "receita_produtos": 22148.07,
+        "frete": 7525.97,
+        "participacao_receita_percentual": 16.83,
+        "posicao_receita": 2
+      },
+      {
+        "estado": "PR",
+        "pedidos": 125,
+        "clientes": 9,
+        "receita_produtos": 17876.78,
+        "frete": 6428.97,
+        "participacao_receita_percentual": 13.59,
+        "posicao_receita": 3
+      },
+      {
+        "estado": "SC",
+        "pedidos": 59,
+        "clientes": 8,
+        "receita_produtos": 8913.29,
+        "frete": 3181.17,
+        "participacao_receita_percentual": 6.77,
+        "posicao_receita": 4
+      },
+      {
+        "estado": "RJ",
+        "pedidos": 62,
+        "clientes": 15,
+        "receita_produtos": 8050.1,
+        "frete": 3203.58,
+        "participacao_receita_percentual": 6.12,
+        "posicao_receita": 5
+      },
+      {
+        "estado": "MG",
+        "pedidos": 49,
+        "clientes": 18,
+        "receita_produtos": 7715.12,
+        "frete": 2576.28,
+        "participacao_receita_percentual": 5.86,
+        "posicao_receita": 6
+      },
+      {
+        "estado": "CE",
+        "pedidos": 51,
+        "clientes": 7,
+        "receita_produtos": 7694.31,
+        "frete": 2589.85,
+        "participacao_receita_percentual": 5.85,
+        "posicao_receita": 7
+      },
+      {
+        "estado": "PI",
+        "pedidos": 37,
+        "clientes": 5,
+        "receita_produtos": 5048.9,
+        "frete": 2146.37,
+        "participacao_receita_percentual": 3.84,
+        "posicao_receita": 8
+      },
+      {
+        "estado": "AL",
+        "pedidos": 38,
+        "clientes": 2,
+        "receita_produtos": 4802.84,
+        "frete": 1952.99,
+        "participacao_receita_percentual": 3.65,
+        "posicao_receita": 9
+      },
+      {
+        "estado": "AM",
+        "pedidos": 32,
+        "clientes": 4,
+        "receita_produtos": 4305.89,
+        "frete": 1177.43,
+        "participacao_receita_percentual": 3.27,
+        "posicao_receita": 10
+      },
+      {
+        "estado": "MT",
+        "pedidos": 30,
+        "clientes": 3,
+        "receita_produtos": 3569.36,
+        "frete": 1690.58,
+        "participacao_receita_percentual": 2.71,
+        "posicao_receita": 11
+      },
+      {
+        "estado": "GO",
+        "pedidos": 28,
+        "clientes": 11,
+        "receita_produtos": 3294.6,
+        "frete": 1266.37,
+        "participacao_receita_percentual": 2.5,
+        "posicao_receita": 12
+      },
+      {
+        "estado": "DF",
+        "pedidos": 21,
+        "clientes": 2,
+        "receita_produtos": 3279.46,
+        "frete": 1058.15,
+        "participacao_receita_percentual": 2.49,
+        "posicao_receita": 13
+      },
+      {
+        "estado": "MA",
+        "pedidos": 20,
+        "clientes": 7,
+        "receita_produtos": 3024.74,
+        "frete": 1176.21,
+        "participacao_receita_percentual": 2.3,
+        "posicao_receita": 14
+      },
+      {
+        "estado": "PA",
+        "pedidos": 18,
+        "clientes": 7,
+        "receita_produtos": 2668.0,
+        "frete": 787.59,
+        "participacao_receita_percentual": 2.03,
+        "posicao_receita": 15
+      },
+      {
+        "estado": "RS",
+        "pedidos": 19,
+        "clientes": 8,
+        "receita_produtos": 2145.24,
+        "frete": 964.03,
+        "participacao_receita_percentual": 1.63,
+        "posicao_receita": 16
+      },
+      {
+        "estado": "PE",
+        "pedidos": 6,
+        "clientes": 6,
+        "receita_produtos": 992.22,
+        "frete": 445.31,
+        "participacao_receita_percentual": 0.75,
+        "posicao_receita": 17
+      },
+      {
+        "estado": "ES",
+        "pedidos": 5,
+        "clientes": 5,
+        "receita_produtos": 623.49,
+        "frete": 105.65,
+        "participacao_receita_percentual": 0.47,
+        "posicao_receita": 18
+      },
+      {
+        "estado": "MS",
+        "pedidos": 3,
+        "clientes": 3,
+        "receita_produtos": 307.58,
+        "frete": 178.83,
+        "participacao_receita_percentual": 0.23,
+        "posicao_receita": 19
+      },
+      {
+        "estado": "PB",
+        "pedidos": 1,
+        "clientes": 1,
+        "receita_produtos": 115.36,
+        "frete": 13.71,
+        "participacao_receita_percentual": 0.09,
+        "posicao_receita": 20
+      },
+      {
+        "estado": "AC",
+        "pedidos": 1,
+        "clientes": 1,
+        "receita_produtos": 31.84,
+        "frete": 44.03,
+        "participacao_receita_percentual": 0.02,
+        "posicao_receita": 21
+      },
+      {
+        "estado": "RN",
+        "pedidos": 1,
+        "clientes": 1,
+        "receita_produtos": 20.7,
+        "frete": 32.42,
+        "participacao_receita_percentual": 0.02,
+        "posicao_receita": 22
+      }
+    ],
+    "ranking_vendedores_categoria": [
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 25,
+        "itens_vendidos": 25,
+        "receita_produtos": 1321.37,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 16,
+        "itens_vendidos": 16,
+        "receita_produtos": 1116.79,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 30,
+        "itens_vendidos": 30,
+        "receita_produtos": 1095.33,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 21,
+        "itens_vendidos": 21,
+        "receita_produtos": 1055.24,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 19,
+        "itens_vendidos": 19,
+        "receita_produtos": 931.51,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 19,
+        "itens_vendidos": 19,
+        "receita_produtos": 841.24,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 15,
+        "itens_vendidos": 15,
+        "receita_produtos": 804.78,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 18,
+        "itens_vendidos": 18,
+        "receita_produtos": 729.77,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 13,
+        "itens_vendidos": 13,
+        "receita_produtos": 647.0,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 1,
+        "categoria": "Acessorios para celulares",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 14,
+        "itens_vendidos": 14,
+        "receita_produtos": 583.35,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 1780.41,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 23,
+        "itens_vendidos": 23,
+        "receita_produtos": 1638.83,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 1637.51,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 17,
+        "itens_vendidos": 17,
+        "receita_produtos": 1527.92,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 16,
+        "itens_vendidos": 16,
+        "receita_produtos": 1235.61,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 15,
+        "itens_vendidos": 15,
+        "receita_produtos": 1148.05,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 12,
+        "itens_vendidos": 12,
+        "receita_produtos": 1003.41,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 11,
+        "itens_vendidos": 11,
+        "receita_produtos": 915.15,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 10,
+        "itens_vendidos": 10,
+        "receita_produtos": 808.58,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 2,
+        "categoria": "Acessorios para computadores",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 11,
+        "itens_vendidos": 11,
+        "receita_produtos": 612.7,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 35,
+        "itens_vendidos": 35,
+        "receita_produtos": 2265.55,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 30,
+        "itens_vendidos": 31,
+        "receita_produtos": 1951.23,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 23,
+        "itens_vendidos": 23,
+        "receita_produtos": 1837.14,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 21,
+        "itens_vendidos": 21,
+        "receita_produtos": 1792.08,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 25,
+        "itens_vendidos": 25,
+        "receita_produtos": 1731.86,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 33,
+        "itens_vendidos": 34,
+        "receita_produtos": 1679.19,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 25,
+        "itens_vendidos": 25,
+        "receita_produtos": 1569.25,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 22,
+        "itens_vendidos": 22,
+        "receita_produtos": 1451.28,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 19,
+        "itens_vendidos": 19,
+        "receita_produtos": 1069.76,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 3,
+        "categoria": "Acessorios para fotografia",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 18,
+        "itens_vendidos": 18,
+        "receita_produtos": 584.1,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 38,
+        "itens_vendidos": 38,
+        "receita_produtos": 2852.01,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 33,
+        "itens_vendidos": 33,
+        "receita_produtos": 2202.91,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 32,
+        "itens_vendidos": 32,
+        "receita_produtos": 2173.97,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 24,
+        "itens_vendidos": 25,
+        "receita_produtos": 2046.93,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 34,
+        "itens_vendidos": 34,
+        "receita_produtos": 1832.15,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 31,
+        "itens_vendidos": 31,
+        "receita_produtos": 1804.24,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 27,
+        "itens_vendidos": 27,
+        "receita_produtos": 1562.36,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 1550.42,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 24,
+        "itens_vendidos": 25,
+        "receita_produtos": 1523.24,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 4,
+        "categoria": "Acessorios para veiculos",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 22,
+        "itens_vendidos": 22,
+        "receita_produtos": 1187.92,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 11,
+        "itens_vendidos": 11,
+        "receita_produtos": 1057.95,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 14,
+        "itens_vendidos": 14,
+        "receita_produtos": 1044.87,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 11,
+        "itens_vendidos": 11,
+        "receita_produtos": 665.53,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 10,
+        "itens_vendidos": 10,
+        "receita_produtos": 652.58,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 10,
+        "itens_vendidos": 10,
+        "receita_produtos": 645.49,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 9,
+        "itens_vendidos": 9,
+        "receita_produtos": 607.89,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 6,
+        "itens_vendidos": 6,
+        "receita_produtos": 504.34,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 7,
+        "itens_vendidos": 7,
+        "receita_produtos": 492.46,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 8,
+        "itens_vendidos": 8,
+        "receita_produtos": 430.12,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 5,
+        "categoria": "Alimentos e bebidas",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 4,
+        "itens_vendidos": 4,
+        "receita_produtos": 218.64,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 48,
+        "itens_vendidos": 49,
+        "receita_produtos": 3369.74,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 46,
+        "itens_vendidos": 46,
+        "receita_produtos": 3191.06,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 52,
+        "itens_vendidos": 52,
+        "receita_produtos": 3154.79,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 43,
+        "itens_vendidos": 45,
+        "receita_produtos": 3031.82,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 45,
+        "itens_vendidos": 46,
+        "receita_produtos": 2876.23,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 40,
+        "itens_vendidos": 40,
+        "receita_produtos": 2809.08,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 41,
+        "itens_vendidos": 41,
+        "receita_produtos": 2642.01,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 44,
+        "itens_vendidos": 45,
+        "receita_produtos": 2387.36,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 43,
+        "itens_vendidos": 44,
+        "receita_produtos": 2274.13,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 6,
+        "categoria": "Artigos de papelaria",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 38,
+        "itens_vendidos": 38,
+        "receita_produtos": 1958.7,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 39,
+        "itens_vendidos": 41,
+        "receita_produtos": 2311.87,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 35,
+        "itens_vendidos": 35,
+        "receita_produtos": 2307.19,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 31,
+        "itens_vendidos": 35,
+        "receita_produtos": 2209.6,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 27,
+        "itens_vendidos": 27,
+        "receita_produtos": 2089.49,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 27,
+        "itens_vendidos": 27,
+        "receita_produtos": 1510.12,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 31,
+        "itens_vendidos": 31,
+        "receita_produtos": 1378.17,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 1265.88,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 18,
+        "itens_vendidos": 18,
+        "receita_produtos": 1158.32,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 1116.27,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 7,
+        "categoria": "Audio",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 22,
+        "itens_vendidos": 22,
+        "receita_produtos": 1070.89,
+        "ranking_na_categoria": 10
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 7,
+        "estado_vendedor": "AM",
+        "pedidos": 35,
+        "itens_vendidos": 35,
+        "receita_produtos": 3173.02,
+        "ranking_na_categoria": 1
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 2,
+        "estado_vendedor": "PI",
+        "pedidos": 32,
+        "itens_vendidos": 33,
+        "receita_produtos": 3002.91,
+        "ranking_na_categoria": 2
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 5,
+        "estado_vendedor": "BA",
+        "pedidos": 34,
+        "itens_vendidos": 35,
+        "receita_produtos": 2894.01,
+        "ranking_na_categoria": 3
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 10,
+        "estado_vendedor": "AC",
+        "pedidos": 25,
+        "itens_vendidos": 25,
+        "receita_produtos": 2606.77,
+        "ranking_na_categoria": 4
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 9,
+        "estado_vendedor": "ES",
+        "pedidos": 26,
+        "itens_vendidos": 27,
+        "receita_produtos": 2595.85,
+        "ranking_na_categoria": 5
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 3,
+        "estado_vendedor": "BA",
+        "pedidos": 27,
+        "itens_vendidos": 27,
+        "receita_produtos": 2360.13,
+        "ranking_na_categoria": 6
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 1,
+        "estado_vendedor": "MG",
+        "pedidos": 29,
+        "itens_vendidos": 29,
+        "receita_produtos": 2295.28,
+        "ranking_na_categoria": 7
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 4,
+        "estado_vendedor": "PR",
+        "pedidos": 24,
+        "itens_vendidos": 24,
+        "receita_produtos": 2227.83,
+        "ranking_na_categoria": 8
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 6,
+        "estado_vendedor": "AM",
+        "pedidos": 22,
+        "itens_vendidos": 23,
+        "receita_produtos": 2104.56,
+        "ranking_na_categoria": 9
+      },
+      {
+        "categoria_id": 8,
+        "categoria": "Automacao residencial",
+        "vendedor_id": 8,
+        "estado_vendedor": "MA",
+        "pedidos": 23,
+        "itens_vendidos": 23,
+        "receita_produtos": 1774.38,
+        "ranking_na_categoria": 10
+      }
+    ],
+    "entrega_estado": [
+      {
+        "estado": "PE",
+        "pedidos_entregues": 5,
+        "media_dias_ate_entrega": 12.63,
+        "mediana_dias_ate_entrega": 13.17,
+        "media_dias_de_atraso": 2.63,
+        "entregas_atrasadas": 5,
+        "percentual_entregas_atrasadas": 100.0
+      },
+      {
+        "estado": "PB",
+        "pedidos_entregues": 1,
+        "media_dias_ate_entrega": 12.04,
+        "mediana_dias_ate_entrega": 12.04,
+        "media_dias_de_atraso": 2.04,
+        "entregas_atrasadas": 1,
+        "percentual_entregas_atrasadas": 100.0
+      },
+      {
+        "estado": "AC",
+        "pedidos_entregues": 1,
+        "media_dias_ate_entrega": 13.0,
+        "mediana_dias_ate_entrega": 13.0,
+        "media_dias_de_atraso": 1.0,
+        "entregas_atrasadas": 1,
+        "percentual_entregas_atrasadas": 100.0
+      },
+      {
+        "estado": "RN",
+        "pedidos_entregues": 1,
+        "media_dias_ate_entrega": 10.21,
+        "mediana_dias_ate_entrega": 10.21,
+        "media_dias_de_atraso": 0.21,
+        "entregas_atrasadas": 1,
+        "percentual_entregas_atrasadas": 100.0
+      },
+      {
+        "estado": "ES",
+        "pedidos_entregues": 5,
+        "media_dias_ate_entrega": 13.55,
+        "mediana_dias_ate_entrega": 13.88,
+        "media_dias_de_atraso": 1.99,
+        "entregas_atrasadas": 4,
+        "percentual_entregas_atrasadas": 80.0
+      },
+      {
+        "estado": "DF",
+        "pedidos_entregues": 19,
+        "media_dias_ate_entrega": 13.34,
+        "mediana_dias_ate_entrega": 13.58,
+        "media_dias_de_atraso": 1.55,
+        "entregas_atrasadas": 14,
+        "percentual_entregas_atrasadas": 73.68
+      },
+      {
+        "estado": "AL",
+        "pedidos_entregues": 30,
+        "media_dias_ate_entrega": 12.07,
+        "mediana_dias_ate_entrega": 11.88,
+        "media_dias_de_atraso": 1.7,
+        "entregas_atrasadas": 21,
+        "percentual_entregas_atrasadas": 70.0
+      },
+      {
+        "estado": "MS",
+        "pedidos_entregues": 3,
+        "media_dias_ate_entrega": 14.03,
+        "mediana_dias_ate_entrega": 14.08,
+        "media_dias_de_atraso": 2.83,
+        "entregas_atrasadas": 2,
+        "percentual_entregas_atrasadas": 66.67
+      },
+      {
+        "estado": "MG",
+        "pedidos_entregues": 47,
+        "media_dias_ate_entrega": 12.1,
+        "mediana_dias_ate_entrega": 12.29,
+        "media_dias_de_atraso": 1.49,
+        "entregas_atrasadas": 31,
+        "percentual_entregas_atrasadas": 65.96
+      },
+      {
+        "estado": "AM",
+        "pedidos_entregues": 25,
+        "media_dias_ate_entrega": 11.51,
+        "mediana_dias_ate_entrega": 11.33,
+        "media_dias_de_atraso": 1.27,
+        "entregas_atrasadas": 15,
+        "percentual_entregas_atrasadas": 60.0
+      },
+      {
+        "estado": "SC",
+        "pedidos_entregues": 48,
+        "media_dias_ate_entrega": 12.72,
+        "mediana_dias_ate_entrega": 12.85,
+        "media_dias_de_atraso": 1.08,
+        "entregas_atrasadas": 26,
+        "percentual_entregas_atrasadas": 54.17
+      },
+      {
+        "estado": "PR",
+        "pedidos_entregues": 104,
+        "media_dias_ate_entrega": 12.41,
+        "mediana_dias_ate_entrega": 12.35,
+        "media_dias_de_atraso": 1.0,
+        "entregas_atrasadas": 55,
+        "percentual_entregas_atrasadas": 52.88
+      },
+      {
+        "estado": "SP",
+        "pedidos_entregues": 141,
+        "media_dias_ate_entrega": 12.52,
+        "mediana_dias_ate_entrega": 12.83,
+        "media_dias_de_atraso": 1.09,
+        "entregas_atrasadas": 74,
+        "percentual_entregas_atrasadas": 52.48
+      },
+      {
+        "estado": "CE",
+        "pedidos_entregues": 44,
+        "media_dias_ate_entrega": 11.61,
+        "mediana_dias_ate_entrega": 11.29,
+        "media_dias_de_atraso": 0.85,
+        "entregas_atrasadas": 23,
+        "percentual_entregas_atrasadas": 52.27
+      },
+      {
+        "estado": "PA",
+        "pedidos_entregues": 14,
+        "media_dias_ate_entrega": 12.01,
+        "mediana_dias_ate_entrega": 12.38,
+        "media_dias_de_atraso": 0.92,
+        "entregas_atrasadas": 7,
+        "percentual_entregas_atrasadas": 50.0
+      },
+      {
+        "estado": "MT",
+        "pedidos_entregues": 25,
+        "media_dias_ate_entrega": 12.98,
+        "mediana_dias_ate_entrega": 13.58,
+        "media_dias_de_atraso": 0.65,
+        "entregas_atrasadas": 12,
+        "percentual_entregas_atrasadas": 48.0
+      },
+      {
+        "estado": "GO",
+        "pedidos_entregues": 24,
+        "media_dias_ate_entrega": 13.48,
+        "mediana_dias_ate_entrega": 13.88,
+        "media_dias_de_atraso": 0.81,
+        "entregas_atrasadas": 11,
+        "percentual_entregas_atrasadas": 45.83
+      },
+      {
+        "estado": "RJ",
+        "pedidos_entregues": 50,
+        "media_dias_ate_entrega": 12.25,
+        "mediana_dias_ate_entrega": 12.48,
+        "media_dias_de_atraso": 1.26,
+        "entregas_atrasadas": 22,
+        "percentual_entregas_atrasadas": 44.0
+      },
+      {
+        "estado": "RS",
+        "pedidos_entregues": 16,
+        "media_dias_ate_entrega": 12.39,
+        "mediana_dias_ate_entrega": 12.0,
+        "media_dias_de_atraso": 0.83,
+        "entregas_atrasadas": 7,
+        "percentual_entregas_atrasadas": 43.75
+      },
+      {
+        "estado": "BA",
+        "pedidos_entregues": 129,
+        "media_dias_ate_entrega": 11.39,
+        "mediana_dias_ate_entrega": 11.75,
+        "media_dias_de_atraso": 0.96,
+        "entregas_atrasadas": 56,
+        "percentual_entregas_atrasadas": 43.41
+      },
+      {
+        "estado": "PI",
+        "pedidos_entregues": 34,
+        "media_dias_ate_entrega": 12.64,
+        "mediana_dias_ate_entrega": 13.13,
+        "media_dias_de_atraso": 0.68,
+        "entregas_atrasadas": 14,
+        "percentual_entregas_atrasadas": 41.18
+      },
+      {
+        "estado": "MA",
+        "pedidos_entregues": 18,
+        "media_dias_ate_entrega": 11.8,
+        "mediana_dias_ate_entrega": 10.77,
+        "media_dias_de_atraso": 0.72,
+        "entregas_atrasadas": 6,
+        "percentual_entregas_atrasadas": 33.33
+      }
+    ]
+  }
+}
