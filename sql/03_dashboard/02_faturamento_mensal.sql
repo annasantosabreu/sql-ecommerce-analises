@@ -1,16 +1,17 @@
 -- Faturamento mensal por data da compra; somente pedidos entregues.
-SELECT
-    DATE_TRUNC('month', p.data_compra)::DATE AS mes,
-    COUNT(DISTINCT p.id) AS pedidos,
-    SUM(i.preco + i.frete)::NUMERIC(14,2) AS faturamento,
-    AVG(totais.valor_pedido)::NUMERIC(14,2) AS ticket_medio
-FROM pedidos p
-JOIN itens_pedido i ON i.pedido_id = p.id
-JOIN (
-    SELECT pedido_id, SUM(preco + frete) AS valor_pedido
-    FROM itens_pedido
-    GROUP BY pedido_id
-) totais ON totais.pedido_id = p.id
-WHERE p.status = 'entregue'
-GROUP BY DATE_TRUNC('month', p.data_compra)
+WITH por_pedido AS (
+    SELECT p.id,
+           DATE_TRUNC('month', p.data_compra)::DATE AS mes,
+           SUM(i.preco + i.frete) AS valor_pedido
+    FROM pedidos p
+    JOIN itens_pedido i ON i.pedido_id = p.id
+    WHERE p.status = 'entregue'
+    GROUP BY p.id, DATE_TRUNC('month', p.data_compra)::DATE
+)
+SELECT mes,
+       COUNT(*) AS pedidos,
+       SUM(valor_pedido)::NUMERIC(14,2) AS faturamento,
+       AVG(valor_pedido)::NUMERIC(14,2) AS ticket_medio
+FROM por_pedido
+GROUP BY mes
 ORDER BY mes;
